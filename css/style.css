@@ -1,9 +1,22 @@
-* {
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+:root {
+    --cor-primaria: #09688;
+    --cor-branco: #fff;
+    --cor-branco-transparente-titulo: rgba(255, 255, 255, 0.6);
+    --cor-branco-transparente-subtitulo: rgba(255, 255, 255, 0.8);
+    --cor-background-botao: rgba(0, 150, 136, 0.3);
+    --cor-rodape: rgba(255, 255, 255, 0.2);
+}
+
+/* Reset */
+* {   
     margin: 0;
     padding: 0;
-    font-family: sans-serif;
-    color: #fff;
+    font-family: "Roboto", sans-serif;
 }
+
+/* Imagem de fundo */
 
 .banner {
     width: 100%;
@@ -13,10 +26,13 @@
     background-position: center;
 }
 
+/* Limitando a página a 1200px */
+
 .container {
     max-width: 1200px;
 }
 
+/* Menu superior  */
 .navbar {
     width: 85%;
     margin: auto;
@@ -45,6 +61,7 @@
 .menu a {
     text-decoration: none;
     letter-spacing: 1px;
+    color: var(--cor-branco);
 }
 
 .menu a::after {
@@ -62,13 +79,75 @@
     width: 100%;
 }
 
+/* Textos da página princial */
 .content {
-    margin: auto;
-    width: 85%;
+    width: 100%;
+    position: absolute;
+    top: 25%;
+    transform: translateY(25%);
+    text-align: center;
+}
+
+.content h1 {
+    font-size: 4em;
+    font-weight: 700;
+    color: var(--cor-branco-transparente-titulo);
+}
+
+.content h3 {
+    margin: 2cqh auto;
+    line-height: 25px;
+    font-weight: 300;
+    color: var(--cor-branco-transparente-subtitulo);
+}
+
+/* botões */
+.buttons {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+.buttons a{
+    text-decoration: none;
+    padding: 15px 35px;
+    text-align: center;
+    border-radius: 5px;
+    border: 1px solid #009688;
+    background: rgba(0,0,0,0.3);
+    color: var(--cor-branco);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Efeito botões */
+span {
+    background: var(--cor-background-botao);
+    height: 0%;
+    width: 100%;
+    border-radius: 5px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+    transition: 0.3s;
+}
+
+.buttons a:hover span {
     height: 100%;
+}
+
+/* Rodapé */
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    margin: 0 7%;
     padding: 35px 0;
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
+    color: var(--cor-rodape);
 }
